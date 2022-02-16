@@ -2,7 +2,7 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typo
 import React from 'react';
 
 const Clothe = ({ clothe }) => {
-    const { name, price, image, category } = clothe;
+    const { name, price, image, cetagory } = clothe;
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -15,20 +15,21 @@ const Clothe = ({ clothe }) => {
                 />
                 <CardContent>
                     <Typography className='text-uppercase' gutterBottom variant="h5" component="div">
-                        {category}
+                        {name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">{
-                        name
+                        cetagory
                     }
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions className='d-flex'>
-                <Button size="small" color="primary">
-                    Share
+            <CardActions className='d-flex justify-content-between'>
+                <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", m: 5 }}>
+                    Parches
                 </Button>
-                <Typography variant="h5">
-                    {price}
+                <Typography variant="body2" color="text.secondary">${
+                    price
+                }
                 </Typography>
             </CardActions>
         </Card>

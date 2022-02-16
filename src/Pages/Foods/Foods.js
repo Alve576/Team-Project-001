@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Food from '../Food/Food';
+import ShopHeader from '../ShopHeader/ShopHeader';
 
 const Foods = () => {
     const [foods, setFoods] = useState([])
@@ -11,6 +12,8 @@ const Foods = () => {
     console.log(foods)
     return (
         <div className='container p-0' >
+            <h3>You Can Shop From Here.</h3>
+            <ShopHeader></ShopHeader>
             <h3>Foods</h3>
             <div className='row px-0 justify-content-around'>
                 {
