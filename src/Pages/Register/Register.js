@@ -3,7 +3,8 @@ import { TextField,Typography,Paper,Box,Button } from "@mui/material";
 import { Link, NavLink } from 'react-router-dom';
 import './../Login/style.css'
 import useFirebase from './../../Hooks/useFirebase';
-
+import Navbar from './../../Components/Navbar'
+import Footer from './../../Components/Footer/Footer';
 
 const Register = () => {
   const [loginData,setLoginData] = useState({});
@@ -27,6 +28,7 @@ const Register = () => {
     };
   return (
     <>
+    <Navbar/>
     <Box className="container fontmy mt-5">
       <div className="row d-flex align-items  fontmy">
             <div className="col-lg-6 fontmy">
@@ -70,7 +72,7 @@ const Register = () => {
        
       </div>
     </Box>
-   
+    <Footer/>
  </>
   );
 };
