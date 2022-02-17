@@ -14,6 +14,7 @@ import Clothes from './Pages/Clothes/Clothes';
 import Recipes from './Pages/Recipes/Recipes';
 import SingleRecipe from './Pages/SingleRecipe/SingleRecipe';
 import AboutUs from './Pages/AboutUs/AboutUs';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 initfireApp()
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/singleRecipe/:recipeId" element={<SingleRecipe></SingleRecipe>} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/aboutUs' element={<AboutUs></AboutUs>} />
+          <Route path='/contactUs' element={<ContactUs></ContactUs>} />
 
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
