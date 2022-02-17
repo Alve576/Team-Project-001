@@ -78,7 +78,7 @@ const AboutUs = () => {
             </div>
             {/* Our performance */}
             <div className='container my-5 d-flex'>
-                <div className="col-lg-4 text-end">
+                <div className="col-lg-4 text-end" data-aos="fade-right">
                     <Typography variant="h5" gutterBottom component="div" sx={{ color: "#b0bec5" }}>
                         Our performance
                     </Typography>
@@ -200,7 +200,7 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 text-end">
+                    <div className="col-lg-4 text-end" data-aos="fade-left">
                         <h5 className='primary-clr fw-bold'>Our Team</h5>
                         <Typography variant="h2" gutterBottom component="div">
                             Meet Our Expert Team

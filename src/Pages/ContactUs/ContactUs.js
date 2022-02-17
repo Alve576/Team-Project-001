@@ -24,7 +24,7 @@ const ContactUs = () => {
                 Contact Us
             </Typography>
             <div className="container d-flex">
-                <div className="col-lg-6 text-start">
+                <div className="col-lg-6 text-start" >
                     <Typography className="primary-clr" variant="h4" gutterBottom component="div">
                         Contact form
                     </Typography>
