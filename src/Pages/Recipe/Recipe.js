@@ -4,9 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    const { img, title, title2, price, category } = product;
+    const { img, title, title2, price, category, id } = product;
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -30,9 +31,11 @@ const Product = ({ product }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className='d-flex justify-content-between'>
-                <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E" }}>
-                    Parches
-                </Button>
+                <Link className='text-decoration-none' to={`/singleRecipe/${id}`}>
+                    <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E" }}>
+                        Parches
+                    </Button>
+                </Link>
                 <Typography variant="body2" color="text.secondary">${
                     price
                 }

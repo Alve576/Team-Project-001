@@ -37,7 +37,7 @@ export default function DenseAppBar() {
             </Link>
           </IconButton>
           <IconButton>
-            <Link style={{fontWeight : 'bolder',textDecoration : 'none',color : '#253D4E'}} to='/about'>
+            <Link style={{fontWeight : 'bolder',textDecoration : 'none',color : '#253D4E'}} to='/aboutUs'>
                 About
             </Link>
           </IconButton>

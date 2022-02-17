@@ -13,6 +13,8 @@ import Electronics from './Pages/Electronics/Electronics';
 import Clothes from './Pages/Clothes/Clothes';
 import Recipes from './Pages/Recipes/Recipes';
 import Home from './Pages/Home/Home';
+import SingleRecipe from './Pages/SingleRecipe/SingleRecipe';
+import AboutUs from './Pages/AboutUs/AboutUs';
 
 initfireApp()
 function App() {
@@ -28,8 +30,9 @@ function App() {
           <Route exact path="/shop/foods" element={<Foods></Foods>} />
           <Route exact path="/shop/electronics" element={<Electronics></Electronics>} />
           <Route exact path="/shop/clothes" element={<Clothes></Clothes>} />
-
+          <Route path="/singleRecipe/:recipeId" element={<SingleRecipe></SingleRecipe>} />
           <Route path='/shop' element={<Shop />} />
+          <Route path='/aboutUs' element={<AboutUs></AboutUs>} />
 
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
