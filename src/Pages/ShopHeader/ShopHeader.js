@@ -2,9 +2,6 @@ import { Box, Button, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ShopHeader.css'
-// import Recipes from '../Recipes/Recipes'
-// import { Link, Route, Routes } from 'react-router-dom';
-// import Electronics from '../Electronics/Electronics';
 
 const ShopHeader = () => {
     return (
