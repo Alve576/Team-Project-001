@@ -8,6 +8,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { Link, NavLink } from 'react-router-dom';
 import './style.css'
 import useFirebase from './../../Hooks/useFirebase'
+import Navbar from './../../Components/Navbar.js';
+import Footer from './../../Components/Footer/Footer';
 
 const Login = () => {
 
@@ -29,6 +31,7 @@ const Login = () => {
   
   return (
    <>
+      <Navbar/>
       <Box className="container" style={{ fontFamily: 'Quicksand',marginTop:'50px'}}>
         <div className="row d-flex align-items-center">
               <Box className="col-lg-6 shadow-lg" style={{color : "#3BB77E",borderRadius : 16,}}>
@@ -71,6 +74,7 @@ const Login = () => {
           </div>
         </div>
       </Box>
+      <Footer/>
      
    </>
   );

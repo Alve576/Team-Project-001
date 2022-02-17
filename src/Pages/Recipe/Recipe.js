@@ -6,8 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 const Product = ({ product }) => {
-    const { img, title, title2 } = product;
-    console.log(product)
+    const { img, title, title2, price, category } = product;
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -21,16 +20,23 @@ const Product = ({ product }) => {
                     <Typography gutterBottom variant="h5" component="div">
                         {title}
                     </Typography>
+                    <Typography className='text-uppercase' gutterBottom variant="h7" component="div">
+                        {category}
+                    </Typography>
                     <Typography variant="body2" color="text.secondary">{
                         title2
                     }
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Share
+            <CardActions className='d-flex justify-content-between'>
+                <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E" }}>
+                    Parches
                 </Button>
+                <Typography variant="body2" color="text.secondary">${
+                    price
+                }
+                </Typography>
             </CardActions>
         </Card>
     );

@@ -43,7 +43,7 @@ const ShopHeader = () => {
                 <Typography>
                     Blog & News
                 </Typography>
-                <Button variant="text">Home</Button>
+                <Link to="/home"><Button variant="text">Home</Button></Link>
             </Grid>
         </Box>
     );

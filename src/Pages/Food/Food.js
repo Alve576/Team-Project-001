@@ -22,12 +22,13 @@ const Food = ({ food }) => {
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions className='d-flex'>
-                <Button size="small" color="primary">
-                    Share
+            <CardActions className='d-flex justify-content-between'>
+                <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", }}>
+                    Parches
                 </Button>
-                <Typography variant="h5">
-                    {price}
+                <Typography variant="body2" color="text.secondary">${
+                    price
+                }
                 </Typography>
             </CardActions>
         </Card>

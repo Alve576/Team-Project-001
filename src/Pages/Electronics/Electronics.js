@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Electronic from '../Electronic/Electronic';
+import ShopHeader from '../ShopHeader/ShopHeader';
 
 const Electronics = () => {
     const [electronics, setElectronics] = useState([])
@@ -10,6 +11,8 @@ const Electronics = () => {
     }, [])
     return (
         <div className='container p-0' >
+            <h3>You Can Shop From Here.</h3>
+            <ShopHeader></ShopHeader>
             <h3>Electronic</h3>
             <div className='row px-0 justify-content-around'>
                 {
