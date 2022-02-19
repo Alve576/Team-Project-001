@@ -8,9 +8,11 @@ const useFirebase = () => {
     const auth = getAuth();
 
 
-   const registerUser = (email,password) => {
+   const registerUser = (email,password,location,navigate) => {
     createUserWithEmailAndPassword(auth,email,password)
     .then((userCredential) => {
+        const destination = location?.state?.from || '/';
+            navigate(destination)
         const user  = userCredential.user;
         setUser(user)
         console.log(user,email,password)
@@ -20,9 +22,11 @@ const useFirebase = () => {
 };
 
     
-    const login  = (email,password ) => {
+    const login  = (email,password,location,navigate ) => {
         signInWithEmailAndPassword(auth,email,password)
         .then((userCredential)=>{
+            const destination = location?.state?.from || '/';
+            navigate(destination)
             const user  = userCredential.user;
             setUser(user)
             console.log(user)

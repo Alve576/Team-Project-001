@@ -10,9 +10,8 @@ const Products = () => {
             .then(data => setProducts(data))
     }, [])
     return (
-        <div className='container p-0' >
-            <ShopHeader></ShopHeader>
-            <h3>Clothes</h3>
+        <div className='container p-0' style={{marginTop : "100px"}}>
+            <h3>You Can Shop From Here.</h3>
             <div className='row px-0 justify-content-around'>
                 {
                     products.map(product => <Recipe key={product.id} product={product}></Recipe>)

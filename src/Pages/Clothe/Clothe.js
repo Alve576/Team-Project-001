@@ -2,10 +2,34 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Icon
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, ShoppingCart, Favorite } from '@mui/icons-material';
+import useAuth from './../../Hooks/useAuth';
 
 const Clothe = ({ clothe }) => {
     const { name, price, image, cetagory,_id } = clothe;
-    
+    const {user} = useAuth()
+
+    const updateCart = (e) => {
+        clothe.email = user.email;
+        fetch("http://localhost:5000/cart", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(clothe),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.insertedId) {
+                    alert('Added To Cart');
+                 
+                }
+                else if (result.modifiedCount) {
+                    alert('One more product added');
+                }
+                else
+                    alert('Something Went Wrong');
+            });
+  
+        console.log(clothe);
+    }
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -33,7 +57,7 @@ const Clothe = ({ clothe }) => {
                     </Button>
                 </Link> 
 
-                <IconButton sx={{ color: "#3BB77E" }}>
+                <IconButton onClick={()=> updateCart()} sx={{ color: "#3BB77E" }}>
                     <ShoppingCart/>
                 </IconButton>
 

@@ -11,9 +11,8 @@ const Foods = () => {
     }, [])
     console.log(foods)
     return (
-        <div className='container p-0' >
+        <div className='container' style={{marginTop : "100px"}} >
             <h3>You Can Shop From Here.</h3>
-            <ShopHeader></ShopHeader>
             <h3>Foods</h3>
             <div className='row px-0 justify-content-around'>
                 {

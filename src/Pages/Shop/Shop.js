@@ -1,14 +1,13 @@
 import React from 'react';
-import Recipes from './../Recipes/Recipes';
-import Navbar from './../../Components/Navbar.js'
 import Footer from './../../Components/Footer/Footer';
-
+import ShopHeader from '../ShopHeader/ShopHeader';
+import Navbar from './../../Components/Navbar'
 const Shop = () => {
     return (
         <div>
             <Navbar/>
-            <Recipes></Recipes>
-            <Footer/>
+            <ShopHeader/>
+            <Footer />
         </div>
     );
 };

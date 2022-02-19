@@ -22,7 +22,8 @@ import AuthProvider from './Context/AuthProvider'
 import SingleFood from './Pages/SingleFood/SingleFood';
 import SingleElectronic from './Pages/SingleElcetronic/SingleElectronic';
 import SingleCloth from './Pages/SingleCloth/SingleCloth';
-
+import Navbar from './Components/Navbar'
+import PrivetRoute from './Pages/PrivetRoute/PrivetRoute';
 
 initfireApp()
 function App() {
@@ -35,15 +36,21 @@ function App() {
             <Route exact path ='/' element={<Home/>}/>
             <Route exact path ='/home' element={<Home/>}/>
 
-            <Route exact path="/shop/recipes" element={<Recipes></Recipes>} />
-            <Route exact path="/shop/foods" element={<Foods></Foods>} />
-            <Route exact path="/shop/electronics" element={<Electronics></Electronics>} />
-            <Route exact path="/shop/clothes" element={<Clothes></Clothes>} />
+            <Route path='/shop' element={
+                <Shop />}>
+
+                <Route exact path="/shop/recipes" element={<Recipes></Recipes>} />
+                <Route exact path="/shop/foods" element={<Foods></Foods>} />
+                <Route exact path="/shop/electronics" element={<Electronics></Electronics>} />
+                <Route exact path="/shop/clothes" element={<Clothes></Clothes>} />
+                
+            </Route>
+
             <Route path="/singleRecipe/:recipeId" element={<SingleRecipe></SingleRecipe>} />
             <Route path="/singleFood/:foodId" element={<SingleFood/>} />
             <Route path="/singleElectronic/:electronicId" element={<SingleElectronic/>} />
             <Route path="/singleCloth/:clothId" element={<SingleCloth/>} />
-            <Route path='/shop' element={<Shop />} />
+
             <Route path='/aboutUs' element={<AboutUs></AboutUs>} />
             <Route path='/contactUs' element={<ContactUs></ContactUs>} />
 
@@ -53,12 +60,10 @@ function App() {
             <Route path='/checkout' element={<Checkout />} />
 
             <Route path="/dashboard" element={
-              <Dashboard />
+              <PrivetRoute><Dashboard /></PrivetRoute>
             }>
               <Route exact path="/dashboard/dashboardhome" element={
-                <DashboardHome>
-
-                </DashboardHome>}>
+                <DashboardHome/>}>
               </Route>
 
               <Route path={`/dashboard/makeAdmin`} element={
@@ -70,6 +75,7 @@ function App() {
               }>
               </Route>
             </Route>
+
           </Routes>
         </BrowserRouter>
      </AuthProvider>

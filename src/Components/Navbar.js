@@ -136,7 +136,7 @@ export default function PrimarySearchAppBar() {
          
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <IconButton
+            {user.email && <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
@@ -146,7 +146,7 @@ export default function PrimarySearchAppBar() {
                         User :  {user.email}
                     </Typography>
               </Badge>
-            </IconButton>
+            </IconButton>}
             <IconButton size="large" aria-label="show 4 new mails" color="inherit" >
               <Badge badgeContent={4} color="error">
                 <Favorite />

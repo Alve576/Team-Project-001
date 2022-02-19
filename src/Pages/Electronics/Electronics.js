@@ -10,9 +10,8 @@ const Electronics = () => {
             .then(data => setElectronics(data))
     }, [])
     return (
-        <div className='container p-0' >
+        <div className='container p-0' style={{marginTop : "100px"}}>
             <h3>You Can Shop From Here.</h3>
-            <ShopHeader></ShopHeader>
             <h3>Electronic</h3>
             <div className='row px-0 justify-content-around'>
                 {
