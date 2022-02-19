@@ -5,7 +5,7 @@ import ShopHeader from '../ShopHeader/ShopHeader';
 const Clothes = () => {
     const [clothes, setClothes] = useState([])
     useEffect(() => {
-        fetch('/Clothes.json')
+        fetch('http://localhost:5000/cloths')
             .then(res => res.json())
             .then(data => setClothes(data))
     }, [])

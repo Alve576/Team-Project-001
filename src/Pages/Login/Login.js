@@ -7,13 +7,13 @@ import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { Link, NavLink } from 'react-router-dom';
 import './style.css'
-import useFirebase from './../../Hooks/useFirebase'
+import useAuth from './../../Hooks/useAuth'
 import Navbar from './../../Components/Navbar.js';
 import Footer from './../../Components/Footer/Footer';
 
 const Login = () => {
 
-  const {login} = useFirebase();
+  const {login} = useAuth();
   const [loginData,setLoginData] = useState({});
 
   const handleLoginOnSubmit = (e) => {

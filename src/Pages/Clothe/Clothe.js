@@ -1,8 +1,11 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ShoppingBag, ShoppingCart, Favorite } from '@mui/icons-material';
 
 const Clothe = ({ clothe }) => {
-    const { name, price, image, cetagory } = clothe;
+    const { name, price, image, cetagory,_id } = clothe;
+    
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -24,9 +27,19 @@ const Clothe = ({ clothe }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className='d-flex justify-content-between'>
-                <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", m: 5 }}>
-                    Parches
-                </Button>
+                 <Link to={`/singleCloth/${_id}`}>
+                    <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", }}>
+                        Details
+                    </Button>
+                </Link> 
+
+                <IconButton sx={{ color: "#3BB77E" }}>
+                    <ShoppingCart/>
+                </IconButton>
+
+                <IconButton sx={{ color: "#3BB77E" }}>
+                    <Favorite/>
+                </IconButton>
                 <Typography variant="body2" color="text.secondary">${
                     price
                 }

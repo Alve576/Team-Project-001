@@ -1,8 +1,9 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Electronic = ({ electronic }) => {
-    const { name, price, image, category } = electronic;
+    const { name, price, image, category,_id } = electronic;
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -24,9 +25,11 @@ const Electronic = ({ electronic }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className='d-flex justify-content-between'>
-                <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E" }}>
-                    Parches
-                </Button>
+                <Link to={`/singleElectronic/${_id}`}>
+                    <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", }}>
+                        Parches
+                    </Button>
+                </Link> 
                 <Typography variant="body2" color="text.secondary">${
                     price
                 }

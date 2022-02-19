@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { TextField,Typography,Paper,Box,Button } from "@mui/material";
 import { Link, NavLink } from 'react-router-dom';
 import './../Login/style.css'
-import useFirebase from './../../Hooks/useFirebase';
+import useAuth from './../../Hooks/useAuth';
 import Navbar from './../../Components/Navbar'
 import Footer from './../../Components/Footer/Footer';
 
 const Register = () => {
   const [loginData,setLoginData] = useState({});
-  const {registerUser} = useFirebase();
+  const {registerUser} = useAuth();
 
 
   const handleLoginOnSubmit = (e) => {

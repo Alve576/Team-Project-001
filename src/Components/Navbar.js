@@ -19,13 +19,14 @@ import logo from './../Images/logo.svg'
 import NavbarLite from './../Components/NavbarLite'
 import { Favorite, Login, ShoppingBag } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import useAuth from './../Hooks/useAuth';
 
 
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+  const {user,logOut,carts} = useAuth();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -135,6 +136,17 @@ export default function PrimarySearchAppBar() {
          
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <IconButton
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
+              <Badge color="error">
+                    <Typography style={{textDecoration : 'none', color : '#3BB77E'}}>
+                        User :  {user.email}
+                    </Typography>
+              </Badge>
+            </IconButton>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit" >
               <Badge badgeContent={4} color="error">
                 <Favorite />
@@ -144,32 +156,36 @@ export default function PrimarySearchAppBar() {
               </Badge>
             </IconButton>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit" >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={carts.length} color="error">
                 <ShoppingBag />
                     <Link style={{textDecoration : 'none', color : '#3BB77E'}} to='/cart'>
                         Cart
                     </Link>
               </Badge>
             </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-                    <Link style={{textDecoration : 'none', color : '#3BB77E'}} to='/massage'>
-                        Massage
-                    </Link>
-              </Badge>
-            </IconButton>
-            <IconButton
+            {
+              user.email? 
+              <IconButton
               size="large"
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              onClick={logOut}
+              color="inherit"
+            >
+              <Login />
+                <Typography style={{textDecoration : 'none', color : '#3BB77E'}}>
+                    Logout
+                </Typography>
+            </IconButton>
+              :
+              <IconButton
+              size="large"
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
               color="inherit"
             >
               <Login />
@@ -177,6 +193,9 @@ export default function PrimarySearchAppBar() {
                     Login
                 </Link>
             </IconButton>
+              
+            }
+            
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton

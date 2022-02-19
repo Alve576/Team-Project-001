@@ -7,23 +7,21 @@ import Footer from './../../Components/Footer/Footer'
 import useAuth from './../../Hooks/useAuth';
 
 
-const SingleRecipe = () => {
-    const {user} = useAuth();
-    const { recipeId } = useParams()
-    const [recipe, setRecipe] = useState({})
+const SingleElectronic = () => {
+  const { user} = useAuth()
+    const { electronicId } = useParams()
+    const [electronics, setElectronics] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${recipeId}`)
+        fetch(`http://localhost:5000/electronics/${electronicId}`)
             .then(res => res.json())
-            .then(data => setRecipe(data))
+            .then(data => setElectronics(data))
     }, [])
-
-
     const updateCart = (e) => {
-      recipe.email = user.email;
+      electronics.email = user.email;
       fetch("http://localhost:5000/cart", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify(recipe),
+          body: JSON.stringify(electronics),
       })
           .then((res) => res.json())
           .then((result) => {
@@ -38,10 +36,10 @@ const SingleRecipe = () => {
                   alert('Something Went Wrong');
           });
 
-      console.log(recipe);
+      console.log(electronics);
   }
     return (
-        <>
+      <>
       <Navbar/>
           <Container>
       <Grid container sx={{display :  'flex', padding : 10}} >
@@ -50,15 +48,15 @@ const SingleRecipe = () => {
          <Card sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
-              image={recipe.img}
+              image={electronics.image}
               alt="Paella dish"
             />
          </Card>
       </Grid>
       <Grid item xs={6} md={8} lg={6} className="image-wrapper" sx={{textAlign: 'left'}}>
       
-          <Typography variant="h3" paragraph>{recipe.title}</Typography>
-          <Typography variant="h5" sx={{color : 'rgb(210, 63, 87)'}}>{recipe.price}</Typography>
+          <Typography variant="h3" paragraph>{electronics.name}</Typography>
+          <Typography variant="h5" sx={{color : 'rgb(210, 63, 87)'}}>{electronics.price}</Typography>
           <Grid sx={{display : 'flex', pt : 5,pb : 5}}>
                               <Button
                                 size="small"
@@ -90,4 +88,4 @@ const SingleRecipe = () => {
     );
 };
 
-export default SingleRecipe;
+export default SingleElectronic;

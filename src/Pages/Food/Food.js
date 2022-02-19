@@ -1,8 +1,9 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Food = ({ food }) => {
-    const { name, price, image, category } = food
+    const { name, price, image, category,_id } = food
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -23,9 +24,11 @@ const Food = ({ food }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className='d-flex justify-content-between'>
-                <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", }}>
-                    Parches
-                </Button>
+               <Link to={`/singleFood/${_id}`}>
+                    <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", }}>
+                        Parches
+                    </Button>
+                </Link> 
                 <Typography variant="body2" color="text.secondary">${
                     price
                 }

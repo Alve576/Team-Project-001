@@ -7,7 +7,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    const { img, title, title2, price, category, id } = product;
+    const { img, title, title2, price, category, _id } = product;
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -31,7 +31,7 @@ const Product = ({ product }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className='d-flex justify-content-between'>
-                <Link className='text-decoration-none' to={`/singleRecipe/${id}`}>
+                <Link className='text-decoration-none' to={`/singleRecipe/${_id}`}>
                     <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E" }}>
                         Parches
                     </Button>
