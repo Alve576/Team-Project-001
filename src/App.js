@@ -16,16 +16,18 @@ import Home from './Pages/Home/Home';
 import SingleRecipe from './Pages/SingleRecipe/SingleRecipe';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import Navbar from './Components/Navbar'
 
 initfireApp()
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar></Navbar>
         <Routes>
 
-          <Route exact path ='/' element={<Home/>}/>
-          <Route exact path ='/home' element={<Home/>}/>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/home' element={<Home />} />
 
           <Route exact path="/shop/recipes" element={<Recipes></Recipes>} />
           <Route exact path="/shop/foods" element={<Foods></Foods>} />

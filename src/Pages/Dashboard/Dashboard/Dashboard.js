@@ -32,23 +32,23 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div>
+        <div >
             <Toolbar />
             <Divider />
-          
-            {admin && <Box className="navbar-nav mt-auto mb-2 mb-lg-0 shadow-lg" sx={{color: '#253D4E',backgroundColor : "#3BB77E",height : "92vh"}}>
-                <NavLink to={`/dashboard/dashboardhome`}><p style={{color:'#253D4E'}}>Dashboard Home</p></NavLink><br/>
-                <NavLink to={`/dashboard/makeAdmin`}><p style={{color:'#253D4E'}}> Make Admin</p></NavLink><br/>
-                <NavLink to={`/dashboard/addproduct`}><p style={{color:'#253D4E'}}> Add a product</p></NavLink><br/>
-                <NavLink to={`/home`}><p style={{color:'#253D4E'}}> Home</p></NavLink><br/>
+
+            {admin && <Box className="navbar-nav mt-auto mb-2 mb-lg-0 shadow-lg" sx={{ color: '#253D4E', backgroundColor: "#3BB77E", height: "92vh" }}>
+                <NavLink to={`/dashboard/dashboardhome`}><p style={{ color: '#253D4E' }}>Dashboard Home</p></NavLink><br />
+                <NavLink to={`/dashboard/makeAdmin`}><p style={{ color: '#253D4E' }}> Make Admin</p></NavLink><br />
+                <NavLink to={`/dashboard/addproduct`}><p style={{ color: '#253D4E' }}> Add a product</p></NavLink><br />
+                <NavLink to={`/home`}><p style={{ color: '#253D4E' }}> Home</p></NavLink><br />
             </Box>}
 
             {!admin && <Box className="navbar-nav mt-auto mb-2 mb-lg-0 shadow-lg" sx={{ backgroundColor: "#7258db", height: "100vh" }}>
                 <Link to={`/dashboard/dashboardhome`}><a className='text-light'>MyOrders</a></Link><br />
-                
-                
+
+
             </Box>}
-           
+
         </div>
     );
 
@@ -62,8 +62,8 @@ function Dashboard(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
-                    color : '#253D4E',
-                    background : "#3BB77E"
+                    color: '#253D4E',
+                    background: "#3BB77E"
                 }}
             >
                 <Toolbar>
