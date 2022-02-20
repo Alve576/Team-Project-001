@@ -4,13 +4,16 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './../../Components/Navbar'
 import useAuth from './../../Hooks/useAuth';
-
+import Footer from './../../Components/Footer/Footer'
 const Cart = () => {
     const {carts} = useAuth()
   return (
     <div>
         <Navbar/>
-        <div className='container mt-5'>
+        {
+            carts.length > 0 ?  <div className='container mt-5'>
+            <h1 className='mt-5'>Your Cart is Empty</h1>
+                
             <div className='row'>
                 {
                     carts.map((cart) => (
@@ -38,7 +41,10 @@ const Cart = () => {
                     </Box>
                 </div>
             </div>
-        </div>
+        </div> :
+        <h1 className='m-5'>Your Cart is Empty</h1>
+        }
+        <Footer/>
     </div>
   )
 }

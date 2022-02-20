@@ -14,7 +14,7 @@ const Products = () => {
             <h3>You Can Shop From Here.</h3>
             <div className='row px-0 justify-content-around'>
                 {
-                    products.map(product => <Recipe key={product.id} product={product}></Recipe>)
+                    products.map(product => <Recipe key={product._id} product={product}></Recipe>)
                 }
             </div>
         </div>

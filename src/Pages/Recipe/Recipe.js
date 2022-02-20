@@ -9,7 +9,7 @@ import { ShoppingBag, ShoppingCart, Favorite } from '@mui/icons-material';
 import useAuth from './../../Hooks/useAuth';
 
 const Product = ({ product }) => {
-    const { image, title, title2, price, category, _id } = product;
+    const { image, name, title2, price, category, _id } = product;
     const {user} = useAuth()
 
     const updateCart = (e) => {
@@ -45,7 +45,7 @@ const Product = ({ product }) => {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        {title}
+                        {name}
                     </Typography>
                     <Typography className='text-uppercase' gutterBottom variant="h7" component="div">
                         {category}
