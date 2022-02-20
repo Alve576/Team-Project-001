@@ -13,15 +13,15 @@ import Electronics from './Pages/Electronics/Electronics';
 import Clothes from './Pages/Clothes/Clothes';
 import Recipes from './Pages/Recipes/Recipes';
 import Home from './Pages/Home/Home';
-import SingleRecipe from './Pages/SingleRecipe/SingleRecipe';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Cart from './Pages/Cart/Cart';
 import Checkout from './Pages/Checkout/Checkout';
 import AuthProvider from './Context/AuthProvider'
-import SingleFood from './Pages/SingleFood/SingleFood';
-import SingleElectronic from './Pages/SingleElcetronic/SingleElectronic';
-import SingleCloth from './Pages/SingleCloth/SingleCloth';
+import SingleFood from './Pages/Products_id/SingleFood/SingleFood';
+import SingleCloth from './Pages/Products_id/SingleCloth/SingleCloth';
+import SingleElectronic from './Pages/Products_id/SingleElcetronic/SingleElectronic';
+import SingleRecipe from './Pages/Products_id/SingleRecipe/SingleRecipe';
 import Navbar from './Components/Navbar'
 import PrivetRoute from './Pages/PrivetRoute/PrivetRoute';
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Recipe from '../Recipe/Recipe'
+import Recipe from './Recipe/Recipe'
 import ShopHeader from '../ShopHeader/ShopHeader';
 
 const Products = () => {

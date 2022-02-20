@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Clothe from '../Clothe/Clothe';
-import ShopHeader from '../ShopHeader/ShopHeader';
+import Clothe from './Clothe/Clothe';
 
 const Clothes = () => {
     const [clothes, setClothes] = useState([])

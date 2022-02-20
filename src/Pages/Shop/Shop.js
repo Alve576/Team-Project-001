@@ -7,7 +7,6 @@ const Shop = () => {
         <div>
             <Navbar/>
             <ShopHeader/>
-            <Footer />
         </div>
     );
 };

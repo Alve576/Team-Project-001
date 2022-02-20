@@ -1,19 +1,23 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
 import React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, ShoppingCart, Favorite } from '@mui/icons-material';
-import useAuth from './../../Hooks/useAuth';
+import useAuth from './../../../Hooks/useAuth'
 
-const Clothe = ({ clothe }) => {
-    const { name, price, image, cetagory,_id } = clothe;
+const Product = ({ product }) => {
+    const { image, name, title2, price, category, _id } = product;
     const {user} = useAuth()
 
     const updateCart = (e) => {
-        clothe.email = user.email;
+        product.email = user.email;
         fetch("https://evening-cliffs-29291.herokuapp.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify(clothe),
+            body: JSON.stringify(product),
         })
             .then((res) => res.json())
             .then((result) => {
@@ -28,36 +32,37 @@ const Clothe = ({ clothe }) => {
                     alert('Something Went Wrong');
             });
   
-        console.log(clothe);
+        console.log(product);
     }
     return (
         <Card className="col-lg-4 my-3" sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="50%"
-                    width="50%"
+                    height="140"
                     image={image}
                     alt="green iguana"
                 />
                 <CardContent>
-                    <Typography className='text-uppercase' gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h5" component="div">
                         {name}
                     </Typography>
+                    <Typography className='text-uppercase' gutterBottom variant="h7" component="div">
+                        {category}
+                    </Typography>
                     <Typography variant="body2" color="text.secondary">{
-                        cetagory
+                        title2
                     }
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions className='d-flex justify-content-between'>
-                 <Link to={`/singleCloth/${_id}`}>
-                    <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E", }}>
-                        Details
+                <Link className='text-decoration-none' to={`/singleRecipe/${_id}`}>
+                    <Button size="small" sx={{ background: '#253D4E', color: "#3BB77E" }}>
+                        Parches
                     </Button>
-                </Link> 
-
-                <IconButton onClick={()=> updateCart()} sx={{ color: "#3BB77E" }}>
+                </Link>
+                <IconButton onClick={()=> updateCart()}  sx={{ color: "#3BB77E" }}>
                     <ShoppingCart/>
                 </IconButton>
 
@@ -73,4 +78,4 @@ const Clothe = ({ clothe }) => {
     );
 };
 
-export default Clothe;
+export default Product;

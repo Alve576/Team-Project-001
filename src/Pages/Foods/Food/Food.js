@@ -2,7 +2,7 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typo
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, ShoppingCart, Favorite } from '@mui/icons-material';
-import useAuth from './../../Hooks/useAuth';
+import useAuth from './../../../Hooks/useAuth'
 
 const Food = ({ food }) => {
     const { name, price, image, category,_id } = food;

@@ -2,26 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card,Grid, Button, Container, Typography, CardMedia, Rating } from "@mui/material";
 import { ShoppingCart } from '@mui/icons-material';
-import Navbar from './../../Components/Navbar'
-import Footer from './../../Components/Footer/Footer'
-import useAuth from './../../Hooks/useAuth';
+import Navbar from './../../../Components/Navbar'
+import Footer from './../../../Components/Footer/Footer'
+import useAuth from './../../../Hooks/useAuth';
+
+
 const SingleElectronic = () => {
-    const {user} = useAuth()
-    const { clothId } = useParams()
-    const [cloths, setCloths] = useState({})
+  const { user} = useAuth()
+    const { electronicId } = useParams()
+    const [electronics, setElectronics] = useState({})
     useEffect(() => {
-        fetch(`https://evening-cliffs-29291.herokuapp.com/cloths/${clothId}`)
+        fetch(`https://evening-cliffs-29291.herokuapp.com/electronics/${electronicId}`)
             .then(res => res.json())
-            .then(data => setCloths(data))
+            .then(data => setElectronics(data))
     }, [])
-
-
     const updateCart = (e) => {
-      cloths.email = user.email;
+      electronics.email = user.email;
       fetch("https://evening-cliffs-29291.herokuapp.com/cart", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify(cloths),
+          body: JSON.stringify(electronics),
       })
           .then((res) => res.json())
           .then((result) => {
@@ -36,7 +36,7 @@ const SingleElectronic = () => {
                   alert('Something Went Wrong');
           });
 
-      console.log(cloths);
+      console.log(electronics);
   }
     return (
       <>
@@ -48,15 +48,15 @@ const SingleElectronic = () => {
          <Card sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
-              image={cloths.image}
+              image={electronics.image}
               alt="Paella dish"
             />
          </Card>
       </Grid>
       <Grid item xs={6} md={8} lg={6} className="image-wrapper" sx={{textAlign: 'left'}}>
       
-          <Typography variant="h3" paragraph>{cloths.name}</Typography>
-          <Typography variant="h5" sx={{color : 'rgb(210, 63, 87)'}}>{cloths.price}</Typography>
+          <Typography variant="h3" paragraph>{electronics.name}</Typography>
+          <Typography variant="h5" sx={{color : 'rgb(210, 63, 87)'}}>{electronics.price}</Typography>
           <Grid sx={{display : 'flex', pt : 5,pb : 5}}>
                               <Button
                                 size="small"

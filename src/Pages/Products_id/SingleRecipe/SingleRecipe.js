@@ -2,26 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card,Grid, Button, Container, Typography, CardMedia, Rating } from "@mui/material";
 import { ShoppingCart } from '@mui/icons-material';
-import Navbar from './../../Components/Navbar'
-import Footer from './../../Components/Footer/Footer'
-import useAuth from './../../Hooks/useAuth';
+import Navbar from './../../../Components/Navbar'
+import Footer from './../../../Components/Footer/Footer'
+import useAuth from './../../../Hooks/useAuth';
 
-
-const SingleElectronic = () => {
-  const { user} = useAuth()
-    const { electronicId } = useParams()
-    const [electronics, setElectronics] = useState({})
+const SingleRecipe = () => {
+    const {user} = useAuth();
+    const { recipeId } = useParams()
+    const [recipe, setRecipe] = useState({})
     useEffect(() => {
-        fetch(`https://evening-cliffs-29291.herokuapp.com/electronics/${electronicId}`)
+        fetch(`https://evening-cliffs-29291.herokuapp.com/products/${recipeId}`)
             .then(res => res.json())
-            .then(data => setElectronics(data))
+            .then(data => setRecipe(data))
     }, [])
+
+
     const updateCart = (e) => {
-      electronics.email = user.email;
+      recipe.email = user.email;
       fetch("https://evening-cliffs-29291.herokuapp.com/cart", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify(electronics),
+          body: JSON.stringify(recipe),
       })
           .then((res) => res.json())
           .then((result) => {
@@ -36,10 +37,10 @@ const SingleElectronic = () => {
                   alert('Something Went Wrong');
           });
 
-      console.log(electronics);
+      console.log(recipe);
   }
     return (
-      <>
+        <>
       <Navbar/>
           <Container>
       <Grid container sx={{display :  'flex', padding : 10}} >
@@ -48,15 +49,15 @@ const SingleElectronic = () => {
          <Card sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
-              image={electronics.image}
+              image={recipe.img}
               alt="Paella dish"
             />
          </Card>
       </Grid>
       <Grid item xs={6} md={8} lg={6} className="image-wrapper" sx={{textAlign: 'left'}}>
       
-          <Typography variant="h3" paragraph>{electronics.name}</Typography>
-          <Typography variant="h5" sx={{color : 'rgb(210, 63, 87)'}}>{electronics.price}</Typography>
+          <Typography variant="h3" paragraph>{recipe.title}</Typography>
+          <Typography variant="h5" sx={{color : 'rgb(210, 63, 87)'}}>{recipe.price}</Typography>
           <Grid sx={{display : 'flex', pt : 5,pb : 5}}>
                               <Button
                                 size="small"
@@ -88,4 +89,4 @@ const SingleElectronic = () => {
     );
 };
 
-export default SingleElectronic;
+export default SingleRecipe;

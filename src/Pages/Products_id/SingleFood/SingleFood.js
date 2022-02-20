@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card,Grid, Button, Container, Typography, CardMedia, Rating } from "@mui/material";
 import { ShoppingCart } from '@mui/icons-material';
-import Navbar from './../../Components/Navbar'
-import Footer from './../../Components/Footer/Footer'
-import useAuth from './../../Hooks/useAuth';
+import Navbar from './../../../Components/Navbar'
+import Footer from './../../../Components/Footer/Footer'
+import useAuth from './../../../Hooks/useAuth';
 
 const SingleFood = () => {
     const {user} = useAuth();

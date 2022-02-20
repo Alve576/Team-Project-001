@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Electronic from '../Electronic/Electronic';
-import ShopHeader from '../ShopHeader/ShopHeader';
+import Electronic from './Electronic/Electronic';
 
 const Electronics = () => {
     const [electronics, setElectronics] = useState([])
