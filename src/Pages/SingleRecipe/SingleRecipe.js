@@ -12,7 +12,7 @@ const SingleRecipe = () => {
     const { recipeId } = useParams()
     const [recipe, setRecipe] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${recipeId}`)
+        fetch(`https://evening-cliffs-29291.herokuapp.com/products/${recipeId}`)
             .then(res => res.json())
             .then(data => setRecipe(data))
     }, [])
@@ -20,7 +20,7 @@ const SingleRecipe = () => {
 
     const updateCart = (e) => {
       recipe.email = user.email;
-      fetch("http://localhost:5000/cart", {
+      fetch("https://evening-cliffs-29291.herokuapp.com/cart", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(recipe),

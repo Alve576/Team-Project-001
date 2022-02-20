@@ -5,7 +5,7 @@ import ShopHeader from '../ShopHeader/ShopHeader';
 const Clothes = () => {
     const [clothes, setClothes] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/cloths')
+        fetch('https://evening-cliffs-29291.herokuapp.com/cloths')
             .then(res => res.json())
             .then(data => setClothes(data))
     }, [])

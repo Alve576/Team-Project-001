@@ -9,16 +9,16 @@ import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import headphone from './../Images/icon-headphone.svg'
 import { Typography } from '@mui/material';
+import useAuth from './../Hooks/useAuth';
 
 export default function DenseAppBar() {
-   
+   const { user } = useAuth()
   return (
-    <>
-      <Box className='flow-hide' sx={{ flexGrow: 2 }}>
+      <Box className='container-fluid' sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{backgroundColor : 'white'}}>
-        <Toolbar variant="dense" style={{justifyContent : 'space-between'}}>
+        <Box style={{display :'flex',justifyContent : 'space-between'}}>
 
-          <IconButton edge="start" color="secondary" aria-label="menu" sx={{ mr: 2 }}>
+          <IconButton edge="start" color="secondary" aria-label="menu">
             <Button variant='contained' type='submit' sx={{color : 'white',background : "#3BB77E"}}>
                 Browse All Collection
                 <MenuIcon />
@@ -32,7 +32,7 @@ export default function DenseAppBar() {
             </Link>
           </IconButton>
           <IconButton>
-            <Link style={{fontWeight : 'bolder',textDecoration : 'none',color : '#253D4E'}} to='/shop'>
+            <Link style={{fontWeight : 'bolder',textDecoration : 'none',color : '#253D4E'}} to='/shop/recipes'>
                 Shop
             </Link>
           </IconButton>
@@ -46,11 +46,11 @@ export default function DenseAppBar() {
                 Contact
             </Link>
           </IconButton>
-          <IconButton>
+          {user.email && <IconButton>
             <Link style={{fontWeight : 'bolder',textDecoration : 'none',color : '#253D4E'}} to='/dashboard/dashboardhome'>
                 Dashboard
             </Link>
-          </IconButton>
+          </IconButton>}
         </Box>
         <Box className='d-flex'>
             <img src={headphone}/>  
@@ -60,11 +60,10 @@ export default function DenseAppBar() {
             </Typography>
         </Box>
           
-        </Toolbar>
+        </Box>
       </AppBar>
     </Box>
     
-    </>
   );
 }
 

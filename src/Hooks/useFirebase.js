@@ -61,7 +61,7 @@ const useFirebase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cart/${user.email}`)
+        fetch(`https://evening-cliffs-29291.herokuapp.com/cart/${user.email}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)

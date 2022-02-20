@@ -44,7 +44,6 @@ const Deals = () => {
                                         sx={{
                                             boxShadow : 16,
                                             width: 500,
-                                            maxWidth: '100%',
                                             display:'flex',
                                             borderRadius: 16,
                                             background : 'white',

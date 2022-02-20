@@ -1,7 +1,8 @@
 import { Typography } from '@mui/material';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
+import Navbar from './../../Components/Navbar'
+import Footer from './../../Components/Footer/Footer';
 
 
 const ContactUs = () => {
@@ -20,6 +21,7 @@ const ContactUs = () => {
     };
     return (
         <div>
+            <Navbar/>
             <Typography style={{ borderBottom: "2px solid" }} className="primary-clr d-inline-block" variant="h3" gutterBottom component="div">
                 Contact Us
             </Typography>
@@ -58,6 +60,7 @@ const ContactUs = () => {
                     <img src="http://wp.alithemes.com/html/nest/demo-rtl/assets/imgs/page/contact-2.png" className='w-75' style={{ borderRadius: "15px" }} alt="" />
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

@@ -12,13 +12,13 @@ const SingleElectronic = () => {
     const { electronicId } = useParams()
     const [electronics, setElectronics] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/electronics/${electronicId}`)
+        fetch(`https://evening-cliffs-29291.herokuapp.com/electronics/${electronicId}`)
             .then(res => res.json())
             .then(data => setElectronics(data))
     }, [])
     const updateCart = (e) => {
       electronics.email = user.email;
-      fetch("http://localhost:5000/cart", {
+      fetch("https://evening-cliffs-29291.herokuapp.com/cart", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(electronics),

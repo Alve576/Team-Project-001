@@ -37,7 +37,10 @@ function App() {
             <Route exact path ='/home' element={<Home/>}/>
 
             <Route path='/shop' element={
-                <Shop />}>
+              <PrivetRoute>
+                <Shop />
+              </PrivetRoute>
+                }>
 
                 <Route exact path="/shop/recipes" element={<Recipes></Recipes>} />
                 <Route exact path="/shop/foods" element={<Foods></Foods>} />

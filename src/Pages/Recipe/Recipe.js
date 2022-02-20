@@ -14,7 +14,7 @@ const Product = ({ product }) => {
 
     const updateCart = (e) => {
         product.email = user.email;
-        fetch("http://localhost:5000/cart", {
+        fetch("https://evening-cliffs-29291.herokuapp.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(product),

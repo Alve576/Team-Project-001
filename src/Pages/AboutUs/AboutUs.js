@@ -8,9 +8,13 @@ import Instagram from '@mui/icons-material/Instagram';
 import GitHub from '@mui/icons-material/GitHub';
 import Facebook from '@mui/icons-material/Facebook';
 import { AccountCircle } from '@mui/icons-material';
+import Navbar from './../../Components/Navbar'
+import Footer from './../../Components/Footer/Footer';
+
 const AboutUs = () => {
     return (
         <div >
+            <Navbar/>
             <h3>Welcome to Nest</h3>
             <div className='d-flex pt-5'>
                 <div className="col-lg-6 text-end">
@@ -243,6 +247,7 @@ const AboutUs = () => {
                     <Button variant="contained" className='primary-bg my-1'>Subscribe</Button>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

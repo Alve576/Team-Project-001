@@ -5,7 +5,7 @@ import ShopHeader from '../ShopHeader/ShopHeader';
 const Electronics = () => {
     const [electronics, setElectronics] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/electronics')
+        fetch('https://evening-cliffs-29291.herokuapp.com/electronics')
             .then(res => res.json())
             .then(data => setElectronics(data))
     }, [])
